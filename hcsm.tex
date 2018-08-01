@@ -4,11 +4,63 @@
 
 Relate to R. Szabo's papers....
 
+\subsection{Dimension $n$}
+
+In general there is a {\it standard} $n$-Courant bracket on $T_X \oplus \Lambda^{n} T^\ast_X$ given by
+\[
+[[A + \lambda , B + \xi]]:=[A,B]+ \cL_A \xi - \cL_B \lambda +\frac{1}{2} d \left ( \iota_B \lambda - \iota_A \xi \right ).
+\]
+This bracket can be twisted by a $(n+2)$-flux $G$:
+\[
+[[A + \lambda , B + \xi]]:=[A,B]+ \cL_A \xi - \cL_B \lambda +\frac{1}{2} d \left ( \iota_B \lambda - \iota_A \xi \right ) + \iota_A \iota_B G.
+\]
+
+Define an {\it exact} $n$-Courant algebroid to be one which fits into an exact sequence
+\[
+0 \to \Lambda^n T^\ast_X \to \sC \to T_X \to 0.
+\]
+The class of such an extension is the {\it generalized \v{S}evera class}:
+\[
+[\sC] \in \mathrm{Ext}^1 (T_X , \Lambda^n T^\ast_X) \simeq H^1 (X, \Omega^{n+1}).
+\]
+Then one should show that $[\sC] = [G] \in H^{n+2} (X)$.
+
+
+
+
+
 \subsection{Generalized Dirac Structures}
 
 Nothing too special...a Dirac structure is just a $(n-1)$ Lagrangian in a $n$ symplectic Lie algebroid $E$.  Is there a canonical one? Szabo claims there is for $n=3$. Higher Severa classes.
 
 \ryan{These are different than the $n$-plectic people consider...we want non-degeneracy! So not the same as Zambon or Ikeda's QP manifolds.}
+
+Let us restrict to exact $n$-Courant algebroids, $\sC$, over $X$. A $n$-Dirac structure is an integrable Lagrangian $\cL \subset \sC$, i.e., $\cL$ is a Lagrangian subbundle which is closed under the $n$-Courant bracket on $\sC$.
+
+Let $\sX \in \Lambda^{n+1} T_X$ be a polyvector and define its {\it graph} as
+\[
+\Gr (\sX) = \{ \iota_\sX \alpha + \alpha : \alpha \in \Lambda^n T^\ast_X \} \subset \sC.
+\]
+Similarly, for a form $\omega \in \Lambda^{n+1} T_X$, its graph is given by
+\[
+\Gr (\omega) = \{ A + \iota_A \omega : A \in T_X \} \subset \sC.
+\]
+
+\begin{prop}
+Let $\sC$ be an exact $n$-Courant algebroid and $\sX \in \Lambda^{n+1} T_X$. Then $\Gr (\sX) \subset \sC$ is $n$-Dirac if and only if $\{\sX , \sX\} = 0$, where $\{-,-\}$ is the Schouten bracket.
+\end{prop}
+
+\begin{prop}
+Let $\sC$ be an exact $n$-Courant algebroid and $\omega$ an $n+1$-form. Then $\Gr (\omega) \subset \sC$ is $n$-Dirac if and only if $d \omega =0$.
+\end{prop}
+
+
+\subsubsection{Multisymplectic/$p$-plectic Geometry}
+
+Let $X$ be a $p$-plectic (multi-symplectic) manifold with corresponding form $\omega$, then $\Gr (\omega)$ is a $p$-Dirac structure for the standard $p$-Courant algebroid on $X$. \ryan{What is the significance of the injectivity of $\iota_\omega T_X \to \Lambda^p T^\ast_X$?} \ryan{Also, comment on the relationship between generalized moment maps and lagrangians.}
+
+Associated to a $p$-plectic manifold there is a $L_\infty$ algebra, see Rogers (~2011) and/or Vitagliano (~2013).  I guess that this is just the classical field theory on the boundary determined by the associated Lagrangian in the $p$-Courant algebroid model with flat source.
+
 
 \subsection{Link Invariants}
 
