@@ -1,0 +1,307 @@
+\usepackage{mathpazo}
+\usepackage{amssymb, mathtools}%\usepackage{mathrsfs,amsmath, amscd, amsthm,amssymb, amsfonts, verbatim,subfigure, enumerate}
+%\usepackage[mathcal]{eucal}
+\usepackage[mathscr]{euscript}
+\usepackage[all,cmtip]{xy}
+\usepackage{graphicx}
+\usepackage[margin=1in]{geometry}
+%\usepackage[top=1in, bottom=1.25in, left=1.3in, right=1.3in]{geometry}
+
+\usepackage{tikz}
+\usetikzlibrary{decorations.footprints}
+\usetikzlibrary{decorations.markings}
+\usetikzlibrary{decorations.pathmorphing}
+\usetikzlibrary{shapes,arrows,positioning}
+
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=red]{hyperref}
+
+\pagestyle{plain}
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem{cor}[thm]{Corollary}
+\newtheorem{claim}[thm]{Claim}
+
+
+
+\theoremstyle{definition}
+\newtheorem{dfn}[thm]{Definition}
+\newtheorem{dfn/lem}{Definition/Lemma}
+
+\theoremstyle{remark}
+\newtheorem{rmk}[thm]{Remark}
+\newtheorem{eg}[thm]{Example}
+
+\def\be{\begin{equation}}
+\def\ee{\end{equation}}
+\def\bearray{\begin{eqnarray}}
+\def\eearray{\end{eqnarray}}
+\def\bestar{\begin{eqnarray*}}
+\def\eestar{\end{eqnarray*}}
+\def\ben{\begin{displaymath}}
+\def\een{\end{displaymath}}
+
+\def\co{\colon\thinspace}
+
+\def\Riem{{\rm Riem}}
+\def\dR{{\rm dR}}
+\def\Sym{{\rm Sym}}
+\def\d{{\rm d}}
+\def\GL{{\rm GL}}
+\def\tensor{\otimes}
+\def\xto{\xrightarrow}
+\def\zbar{\Bar{z}}
+\def\wbar{\Bar{w}}
+\def\dbar{\Bar{\partial}}
+\def\Tilde{\widetilde}
+\def\Hat{\widehat}
+\def\ul{\underline}
+\def\ch{{\rm ch}}
+
+\def\clie{{\rm C}_{\rm Lie}}
+\def\clieu{{\rm C}^{\rm Lie}}
+\def\Def{{\rm Def}}
+\def\cloc{{\rm C}_{\rm loc}}
+
+\def\hO{\Hat{\cO}}
+\def\bdesc{{\bf desc}}
+\def\Vect{{\rm W}_n}
+\def\hOmega{\Hat{\Omega}}
+
+\def\<{\langle}
+\def\>{\rangle}
+
+\DeclareMathOperator{\csym}{\widehat{\Sym}}
+
+
+\def\cA{\mathcal A}\def\cB{\mathcal B}\def\cC{\mathcal C}\def\cD{\mathcal D}
+\def\cE{\mathcal E}\def\cF{\mathcal F}\def\cG{\mathcal G}\def\cH{\mathcal H}
+\def\cI{\mathcal I}\def\cJ{\mathcal J}\def\cK{\mathcal K}\def\cL{\mathcal L}
+\def\cM{\mathcal M}\def\cN{\mathcal N}\def\cO{\mathcal O}\def\cP{\mathcal P}
+\def\cQ{\mathcal Q}\def\cR{\mathcal R}\def\cS{\mathcal S}\def\cT{\mathcal T}
+\def\cU{\mathcal U}\def\cV{\mathcal V}\def\cW{\mathcal W}\def\cX{\mathcal X}
+\def\cY{\mathcal Y}\def\cZ{\mathcal Z}
+
+\def\AA{\mathbb A}\def\BB{\mathbb B}\def\CC{\mathbb C}\def\DD{\mathbb D}
+\def\EE{\mathbb E}\def\FF{\mathbb F}\def\GG{\mathbb G}\def\HH{\mathbb H}
+\def\II{\mathbb I}\def\JJ{\mathbb J}\def\KK{\mathbb K}\def\LL{\mathbb L}
+\def\MM{\mathbb M}\def\NN{\mathbb N}\def\OO{\mathbb O}\def\PP{\mathbb P}
+\def\QQ{\mathbb Q}\def\RR{\mathbb R}\def\SS{\mathbb S}\def\TT{\mathbb T}
+\def\UU{\mathbb U}\def\VV{\mathbb V}\def\WW{\mathbb W}\def\XX{\mathbb X}
+\def\YY{\mathbb Y}\def\ZZ{\mathbb Z}
+
+\def\sA{\mathscr A}\def\sB{\mathscr B}\def\sC{\mathscr C}\def\sD{\mathscr D}
+\def\sE{\mathscr E}\def\sF{\mathscr F}\def\sG{\mathscr G}\def\sH{\mathscr H}
+\def\sI{\mathscr I}\def\sJ{\mathscr J}\def\sK{\mathscr K}\def\sL{\mathscr L}
+\def\sM{\mathscr M}\def\sN{\mathscr N}\def\sO{\mathscr O}\def\sP{\mathscr P}
+\def\sQ{\mathscr Q}\def\sR{\mathscr R}\def\sS{\mathscr S}\def\sT{\mathscr T}
+\def\sU{\mathscr U}\def\sV{\mathscr V}\def\sW{\mathscr W}\def\sX{\mathscr X}
+\def\sY{\mathscr Y}\def\sZ{\mathscr Z}
+
+\def\bA{\mathbf A}\def\bB{\mathbf B}\def\bC{\mathbf C}\def\bD{\mathbf D}
+\def\bE{\mathbf E}\def\bF{\mathbf F}\def\bG{\mathbf G}\def\bH{\mathbf H}
+\def\bI{\mathbf I}\def\bJ{\mathbf J}\def\bK{\mathbf K}\def\bL{\mathbf L}
+\def\bM{\mathbf M}\def\bN{\mathbf N}\def\bO{\mathbf O}\def\bP{\mathbf P}
+\def\bQ{\mathbf Q}\def\bR{\mathbf R}\def\bS{\mathbf S}\def\bT{\mathbf T}
+\def\bU{\mathbf U}\def\bV{\mathbf V}\def\bW{\mathbf W}\def\bX{\mathbf X}
+\def\bY{\mathbf Y}\def\bZ{\mathbf Z}
+
+\def\fA{\mathfrak A}\def\fB{\mathfrak B}\def\fC{\mathfrak C}\def\fD{\mathfrak D}
+\def\fE{\mathfrak E} \def\fF{\mathfrak F}\def\fG{\mathfrak G}\def\fH{\mathfrak H}
+\def\fI{\mathfrak I}\def\fJ{\mathfrak J}\def\fK{\mathfrak K}\def\fL{\mathfrak L}
+\def\fM{\mathfrak M}\def\fN{\mathfrak N}\def\fO{\mathfrak O}\def\fP{\mathfrak P}
+\def\fQ{\mathfrak Q}\def\fR{\mathfrak R}\def\fS{\mathfrak S}\def\fT{\mathfrak T}
+\def\fU{\mathfrak U}\def\fV{\mathfrak V}\def\fW{\mathfrak W}\def\fX{\mathfrak X}
+\def\fY{\mathfrak Y}\def\fZ{\mathfrak Z}
+
+\def\fa{\mathfrak a}\def\fb{\mathfrak b}\def\fc{\mathfrak c}\def\fd{\mathfrak d}
+\def\fe{\mathfrak e}\def\ff{\mathfrak f}\def\fg{\mathfrak g}\def\fh{\mathfrak h} \def\fj{\mathfrak j}\def\fk{\mathfrak k}\def\fl{\mathfrak l} \def\fm{\mathfrak m}\def\fn{\mathfrak n}\def\fo{\mathfrak o}\def\fp{\mathfrak p} \def\fq{\mathfrak q}\def\fr{\mathfrak r}\def\fs{\mathfrak s}\def\ft{\mathfrak t}
+\def\fu{\mathfrak u}\def\fv{\mathfrak v}\def\fw{\mathfrak w}\def\fx{\mathfrak x}
+\def\fy{\mathfrak y}\def\fz{\mathfrak z}
+
+
+%random
+\def\rad{{\rm rad}}
+\def\Reszero{\underset{z=0}{\rm Res}}
+\def\id{{\rm id}}
+\def\L8{L_\infty}
+\def\Lcat{L_\infty{\rm Alg}}
+
+\def\<{\left\langle}
+\def\>{\right\rangle}
+
+\def\Hat{\widehat}
+\def\Bar{\overline}
+\def\Tilde{\widetilde}
+
+\def\zbar{\Bar{z}}
+\def\dbar{\Bar{\partial}}
+
+\def\hD{\Hat{D}}
+\def\Obs{{\rm Obs}}
+\def\bObs{\Bar{\rm Obs}}
+\def\eqObs{{\rm eqObs}}
+\def\beqObs{\Bar{\rm eqObs}}
+\def\Vect{{{\rm W}_n}}
+\def\Vectz{{{\rm W}^0_n}}
+\def\TVect{\Tilde{{{\rm W}}}_n}
+\def\TTVect{\Tilde{\Tilde{\rm W}}_n}
+\def\Vert{\mathbb{V}{\rm ert}}
+\def\CDO{{\rm CDO}_n}
+\def\cCDO{\Hat{\rm CDO}_n}
+\def\eqDef{{\rm eqDef}}
+\def\Def{{\rm Def}}
+\def\hfg{\Hat{\fg}_n}
+\def\cred{{\rm C}_{\rm Lie,red}}
+\def\hcred{\Hat{\rm C}_{\rm Lie,red}}
+\def\fgn{\mathfrak{g}_n}
+\def\GL{{\rm GL}}
+\def\ch{{\rm ch}}
+\def\Aut{{\rm Aut}}
+\def\CDO{{\rm CDO}}
+\def\hCDO{\Hat{\rm CDO}}
+\def\hOmega{\Hat{\Omega}}
+\def\ul{\underline}
+\def\cSym{\Hat{\Sym}}
+\def\hO{\Hat{\cO}}
+\def\hT{\Hat{\cT}}
+\def\FF{\mathbb{F}}
+\def\pairs{{\rm Pairs}}
+\def\fgl{{\mathfrak{gl}}}
+\def\Rep{{\rm Rep}}
+\def\Fr{{\rm Fr}}
+\def\WGLCAT{{\rm WGLCAT}}
+\def\LLoc{\mathbb{L}{\rm oc}}
+\def\fk{\mathfrak{k}}
+\def\Mod{{\rm Mod}}
+\def\Bun{{\rm Bun}}
+\def\WGLCAT{{\rm VB}_{(\Vect, \GL_n)}}
+\def\VB{{\rm VB}}
+\def\hWGLCAT{\Hat{\rm VB}_{(\Vect, \GL_n)}}
+\def\End{{\rm End}}
+\def\Lie{{\rm Lie}}
+%\def\cR{\mathcal{R}_n}
+%\def\ccR{\Hat{\mathcal{R}}_n}
+\def\ccO{\Hat{\cO}}
+% \def\C{{\rm C}_{\rm Lie}} %This is a crappy macro! It's far too specific for such a short name, plus it led to a doubly named macro \cC
+\def\clie{{\rm C}_{\Lie}}
+\def\clies{{\rm C}_{\rm Lie}^*}
+\def\cliel{{\rm C}^{\rm Lie}}
+\def\cliels{{\rm C}^{\rm Lie}_*}
+\def\hclie{\Hat{\rm C}_{\rm Lie}}
+\def\hclies{\Hat{\rm C}_{\rm Lie}^*}
+%\def\hOmega{\Hat{\Omega}_n}
+\def\Cloc{{\rm C}_{\rm loc}}
+\def\Oloc{\sO_{\rm loc}}
+\def\Sect{{\rm Sect}}
+\def\Fr{{\rm Fr}}
+\def\Exp{{\rm Exp}}
+\def\Hom{{\rm Hom}}
+\def\bW{{\bf W}}
+\def\gl{\mathfrak{g} \mathfrak{l}}
+\def\hc{(\Vect, \GL_n)}
+\def\cW{\mathcal{W}}
+\def\Mod{{\rm Mod}}
+\def\Loc{{\rm Loc}}
+\def\cV{\mathcal{V}}
+\def\ad{{\rm ad}}
+\def\bW{{\bf W}}
+\def\Hol{{\rm Hol}}
+\def\Ext{{\rm Ext}}
+\def\hc{(\Vect, \GL_n)}
+\def\At{{\rm At}}
+\def\Gr{{\rm Gr}}
+\def\fm{{\mathfrak m}}
+\def\desc{{\rm desc}}
+\def\xto{\xrightarrow}
+\def\GK{{\rm GK}}
+\def\op{{{\rm op}}}
+\def\Pro{{\rm Pro}}
+\def\Diff{{\rm Diff}}
+\def\vb{{\rm VB}}
+\def\GrW{{\rm Gr}_{\bW}\;}
+\def\BVect{\Bar{\bW}}
+\def\TVecth{\Tilde{\bW}_n^\hbar}
+\def\BVecth{\Bar{\bW}_n^{\hbar}}
+\def\Aff{{\rm Aff}}
+\def\dvol{{\rm dvol}}
+\def\TAct{\Tilde{\rm Act}}
+\def\H{{\rm H}}
+\def\Hlie{{\rm H}_{\rm Lie}}
+\def\Gr{{\rm Gr}\;}
+\def\Act{{\rm Act}}
+\def\L8{L_\infty}
+\def\ll{\llbracket}
+\def\rr{\rrbracket}
+\def\Tr{{\rm Tr}}
+\def\Der{{\rm Der}}
+\def\id{{\rm id}}
+\def\hVB{\Hat{\VB}}
+\def\ev{{\rm ev}}
+\def\ddesc{\mathbf{desc}}
+\def\tensor{\otimes}
+\def\Diff{{\rm Diff}}
+\def\sdesc{\mathscr{D}{\rm esc}}
+\def\bdesc{\mathbf{desc}}
+
+\def\bm{\mathbf{m}}
+\def\l8to{\rightsquigarrow}
+
+\def\clu{{\rm C}_{\rm L}}
+\def\clus{{\rm C}_{\rm L}^*}
+\def\cll{{\rm C}^{\rm L}}
+\def\clls{{\rm C}^{\rm L}_*}
+\def\cloc{{\rm C}_{\rm loc}}
+\def\TDef{\Tilde{\rm Def}}
+\def\hsym{\Hat{\rm Sym}}
+
+\def\cl{{\rm cl}}
+\def\q{{\rm q}}
+\def\obs{{\rm Obs}}
+\def\supp{{\rm supp}}
+
+\def\Vectnr{{\rm W}_{n,r}}
+\def\TVectnr{\Tilde{\rm W}_{n,r}}
+
+\def\Diff{{\rm Diff}}
+\def\sdesc{\mathscr{D}{\rm esc}}
+\def\bdesc{\mathbf{desc}}
+
+\def\hI{\Hat{\mathcal{I}}}
+\def\cI{\mathcal{I}}
+
+\def\GF{{\rm GF}}
+
+\def\Tens{{\rm Tens}}
+
+\def\Ext{{\rm Ext}}
+\def\hc{(\Vect, \GL_n)}
+\def\cA{\mathcal{A}}
+\def\id{{\rm id}}
+
+\def\Wit{{\rm Wit}}
+\def\cH{\mathcal{H}}
+
+\def\Gr{{\rm Gr}\;}
+\def\Act{{\rm Act}}
+\def\L8{L_\infty}
+\def\ll{\llbracket}
+\def\rr{\rrbracket}
+\def\Tr{{\rm Tr}}
+\def\Der{{\rm Der}}
+\def\cloc{{\rm C}_{\rm loc}}
+\def\VA{{\rm VA}}
+\def\FA{{\rm FA}}
+\def\fr{{\rm fr}}
+\def\Dens{{\rm Dens}}
+\def\sVir{\mathcal{V}{\rm ir}} 
+\DeclareMathOperator{\Spec}{Spec}
+\def\TAut{\Tilde{\rm Aut}}
+
+\def\Bar{\overline}
+\def\SVB{{\rm SVB}}
+\def\Vectnrd{{\rm W}_{n,r|\delta}}
+\def\TVectnrd{\Tilde{\rm W}_{n,r|\delta}}
+\def\CDR{{\rm CDR}}
+\def\hCDR{\Hat{\rm CDR}}
+\def\dslash{\slashed{\partial}}
