@@ -1,17 +1,150 @@
+\documentclass{amsart}
+
+\usepackage{macros,slashed,amsrefs}
+
+\def\ryan{\textcolor{green}{RG: }\textcolor{green}}
+\def\brian{\textcolor{red}{BW: }\textcolor{red}}
+
+\def\cbroid{{\bf C}}
+\def\CA{\sC\sA}
+
+\linespread{1.5}
+
+\begin{document}
+
+% \title[short text for running head]{full title}
+\title{Higher Symplectic Sigma Models}
+
+
+
 \section{Courant Sigma Model}
 
+\subsection{Courant algebroids}
 
-\subsection{Exact Courant Algebroids and the A-model with H-flux}
+\begin{dfn}
+A {\em Courant algebroid} on a manifold $X$ is a tuple $(E, \<-,-\>, a, \ll-,-\rr)$ where 
+\begin{itemize}
+\item[(i)] $E \to X$ is a (finite rank) vector bundle, whose sheaf of smooth sections we denote $\sE$;
+\item[(ii)] $\<-,-\> : \sE \times \sE \to C^\infty_X$ is a nondegenerate, symmetric, bilinear pairing;
+\item[(iii)] $a : \sE \to \sT_X$ is a $C^\infty_X$-linear map, called the anchor;
+\item[(iv)] $\ll-,-\rr : \sE \times \sE \to \sE$ is a bilinear operator.
+\end{itemize}
+This data is required to satisfy the following equations. 
+We denote $x,y,z \in \sE$, $f \in C^\infty_X$.
+\begin{itemize}
+\item[(1)] \brian{list}
+\end{itemize}
+\end{dfn}
 
-Exact Courant algebroids are classified by their Severa class $H \in \Omega^3_{cl} (X)$.  Twisting the canonical topological boundary condition via this class may give a description of the $A$-model with $H$-flux $H$. See R. Szabo's work or the JHEP article of Bonechi--Cattaneo--Iraso (\ryan{they get it as a certain gauged fixing for the Poisson sigma model where the Poisson structure is the inverse of a Kahler form}).
+Every Courant algebroid defines a Lie algebroid in the obvious way.
+The conditions above imply that the tuple $(\sE, a, \ll-,-\rr)$ has the structure of a Lie algebroid on $X$. 
+
+The collection of Courant algebroids on $X$ form a $1$-groupoid that we denote $\CA(X)$.
+The objects are simply Courant algebroids, and the morphisms are bundle isomorphisms preserving the pairing, anchor, and bracket. 
+Note that given any $U \subset X$ one has a natural map of groupoids $\CA(X) \to \CA(U)$ given by restriction.
+The $1$-groupoid of Courant algebroids satisfies a nice gluing law with respect to affine charts on $X$. 
+Namely, there is an equivalence of groupoids 
+\ben
+\CA(X) \simeq \lim_{U \subset X} \CA(U)
+\een
+where the limit is taken over the category of affine subsets of $X$. 
+
+\begin{thm}[\cite{Roytenberg}] 
+Let $L$ be a Lie algebroid.
+There is a one-to-one correspondence between $2$-shifted (Roytenberg) symplectic structures on the dg manifold $[X/L] = (X, \cbroid^*(L))$ and Courant algebroid structures on $L$. 
+\brian{say as equivalence of groupoids}
+\end{thm}
+
+If we relax the symplectic definition to include homotopy coherent $2$-shifted symplectic structures one finds the notion of a {\em twisted} Courant algebroid. 
+
+There is a particularly well-behaved class of Courant algebroids that are important for us. 
+First, note that the linear dual of the anchor map determines a map
+\ben
+a^* : \sT_X^\vee = \Omega^1_X \to \sE^\vee \cong \sE .
+\een
+In the isomorphism, we have identified $\sE$ with its dual via the pairing $\<-,-\>$. 
+A Courant algebroid is {\em exact} if the resulting sequence of locally free sheaves
+\ben
+0 \to \Omega^1_X \xto{a^\vee} \sE \xto{a} \sT_X \to 0
+\een
+is exact. 
+The above exact sequence determines a class in $H^1(X, \Omega^2_{cl})$. 
+
+\begin{thm}\cite{Severa, SafPym, ...} 
+The stack of exact Courant algebroids on $X$ is equivalent to the stack of of $1$-shifted closed two-forms $\Omega^2_{cl}(X) [1]$. 
+In particular, every exact Courant algebroid is completely determined, up to isomorphism, by the class $[H] \in H^1(X, \Omega^2_{cl})$, called its "\v{S}evera" class.
+\end{thm}
+
+
+\subsection{The Courant $\sigma$-model}
+
+\def\enh{{\rm enh}}
+
+Every Courant algebroid defines the following dg Lie algebroid 
+\ben
+\left(\sT_X^\vee [1] \xto{a^\vee} \sE\right) \xto{a} \sT_X, 
+\een 
+that we denote by $\sL_{\sC}$. 
+Here, the parentheses indicate the differential on the Lie algebroid, and $a$ is the anchor. 
+By \cite{??} we know $(X, \enh(\sL_\sC))$ is an $L_\infty$-space equipped with a $2$-shifted symplectic structure that we denote by $\omega_{\sL}$. 
+
+\begin{dfn}
+Let $\sE$ be a Courant algebroid and $M$ a three-manifold. 
+The perturbative Courant $\sigma$-model of maps from $M$ to $\sE$ near the smooth map $f : M \to X$ has underlying space of fields 
+\ben
+\Omega^*(M, f^*\enh(\sL_\sC))[1] .
+\een
+The $(-1)$-shifted pairing is defined by:
+\ben
+\<\alpha, \alpha'\> = \int \omega_{\sL} (\alpha \wedge \alpha') .
+\een
+The action functional is encoded by the local $L_\infty$-structure on $\Omega^*(M, f^*\enh(\sL_\sC))$. 
+\end{dfn}
+
+To begin, let's suppose that $f$ is a constant map. 
+Then, as a graded $\Omega^\#_X$-module, the space of fields has the form
+\ben
+\Omega^\#(M) \tensor \Omega^\#(X, T_X^\vee [2] \oplus E[1] \oplus T_X) .
+\een 
+
+\ryan{Exact Courant algebroids are classified by their Severa class $H \in \Omega^3_{cl} (X)$.  Twisting the canonical topological boundary condition via this class may give a description of the $A$-model with $H$-flux $H$. See R. Szabo's work or the JHEP article of Bonechi--Cattaneo--Iraso (\ryan{they get it as a certain gauged fixing for the Poisson sigma model where the Poisson structure is the inverse of a Kahler form}).}
 
 \subsection{Dirac Structures}
 
-Claim: For fixed $E$, topological boundary conditions (on the target) are given precisely by Dirac structures. 
+Suppose $\sE$ is a Courant algebroid (may or may not be exact) on $X$.
+
+A Dirac structure is a subbundle $L \subset E$ such that 
+\begin{itemize}
+\item[(i)] $L$ is Largrangian with respect to the pairing $\<-,-\>$;
+\item[(ii)] $L$ is involutive with respect to the bracket $[-,-]$.
+\end{itemize}
+
+There is a slightly modified version of a Dirac structure that is relative to a closed submanifold $i : Y \hookrightarrow X$. 
+A Dirac structure on the pair $(\sE,Y)$ is a subbundle $L \subset f^*E$ such that 
+\begin{itemize}
+\item[(i)] $L$ is Largrangian with respect to the pairing $\<-,-\>$;
+\item[(ii)] $L$ is compatible with the anchor, in the sense that $a(L) \subset TY \subset f^* TX$. 
+\item[(ii)] $L$ is involutive with respect to the bracket $[-,-]$.
+\end{itemize}
+
+\brian{Pavel classifies Lagrangian structures on morphisms $[Y / \sM] \to [X / \sE]$ where $\sE$ is a Courant algebroid so $[X/ \sE]$ is $2$-symplectic. 
+In the case $Y = X$ you get the first type of Dirac structures. 
+In the general case, you get the second type. 
+}
+
+In the exact case.
+
+\begin{prop} 
+Suppose we use the Dirac structure for the standard exact Courant algebroiod $\sE = T_X \oplus T_X^\vee$ defined by a Poisson structure $(X, \Pi)$. 
+The corresponding boundary theory for the Courant $\sigma$-model of maps from $\Sigma \times \RR_{\geq 0}$ is equivalent to the Poisson $\sigma$-model on $\Sigma$ with target $(X, \Pi)$. 
+\end{prop}
 
 
 \subsection{Link Invariants}
 
 Let $E$ be a Courant algebroid and $R$ a representation up to homotopy of the associated 2-symplectic Lie algebroid.  Further, assume that $R$ is equipped with an invariant trace.  Wilson loop observables determine invariants for links in a 3-manifold source manifold (anomalies?).
 
+\brian{I claim there are no anomalies for any Courant $\sigma$-model. This should probably wait till a later paper, but perhaps it's good for us to study the local deformation complex still...} 
 
+
+\end{document}
